@@ -1,145 +1,89 @@
-# DebtRiskIQ: Loan Default Prediction & Financial Risk Intelligence
+# DebtRiskIQ: Loan Default Prediction & Credit Risk Analytics
 
-**Author:** Darious Brown
-**GitHub:** https://github.com/Dare215
-**Portfolio:** https://dare215.github.io/DariousBrown-Portfolio/
-**LinkedIn:** https://www.linkedin.com/in/dariousbrown
+## Project Overview
 
----
+DebtRiskIQ is a machine learning project designed to predict loan default risk using borrower financial and demographic characteristics. The project applies predictive analytics techniques to identify high-risk borrowers, improve lending decisions, and demonstrate how data science can be leveraged within the financial services industry.
 
-# Project Overview
-
-DebtRiskIQ is a machine learning project designed to predict the likelihood of loan default using borrower financial characteristics and historical lending data.
-
-The project applies supervised machine learning techniques to identify risk patterns, evaluate borrower profiles, and support data-driven lending decisions. By comparing multiple classification algorithms, the system provides insights into factors that contribute to default risk and demonstrates how predictive analytics can improve financial risk management.
+The solution combines exploratory data analysis (EDA), feature engineering, classification modeling, and performance evaluation to create a practical framework for credit risk assessment.
 
 ---
 
-# Business Problem
+## Business Problem
 
-Financial institutions face significant challenges when assessing borrower risk. Traditional evaluation methods can overlook complex relationships between financial variables, resulting in increased default rates and financial losses.
+Financial institutions face significant losses from borrower defaults. Traditional manual review processes can be time-consuming and may overlook hidden risk patterns within large datasets.
 
-This project aims to:
-
-* Predict potential loan defaults
-* Identify influential borrower characteristics
-* Compare model performance
-* Improve lending decision support
-* Reduce financial risk exposure
+This project addresses the challenge by developing predictive models capable of identifying borrowers with elevated default risk before loan approval, enabling more informed lending decisions and improved portfolio management.
 
 ---
 
-# Dataset
+## Project Objectives
 
-The dataset contains historical loan application information including borrower demographics, financial attributes, and repayment outcomes.
+* Analyze borrower characteristics and loan repayment behavior.
+* Identify relationships between financial variables and default outcomes.
+* Develop predictive models capable of classifying default risk.
+* Compare machine learning approaches for credit risk prediction.
+* Evaluate model performance using ROC analysis and classification metrics.
+* Demonstrate practical applications of AI in financial services.
 
-Key variables include:
+---
 
-* Income
-* Debt-to-Income Ratio
-* Credit History
+## Dataset
+
+The dataset contains borrower financial and demographic information commonly used in loan underwriting and risk assessment.
+
+Example features include:
+
 * Loan Amount
-* Employment Information
-* Borrower Characteristics
+* Income
+* Employment Status
+* Debt-to-Income Ratio
+* Credit History Indicators
+* Loan Purpose
 * Default Status
 
----
-
-# Project Workflow
-
-## 1. Data Cleaning
-
-The dataset was inspected for:
-
-* Missing values
-* Duplicate records
-* Invalid entries
-* Data consistency issues
+The target variable is whether a borrower ultimately defaulted on the loan.
 
 ---
 
-## 2. Exploratory Data Analysis (EDA)
+## Methodology
 
-Exploratory analysis was performed to uncover relationships between borrower attributes and default outcomes.
+### 1. Data Preparation
 
-Analysis included:
-
-* Feature distributions
-* Correlation analysis
-* Borrower risk patterns
-* Variable relationship exploration
-
----
-
-## 3. Feature Engineering
-
-Relevant variables were prepared for machine learning through:
-
+* Data cleaning
+* Missing value handling
+* Feature selection
 * Encoding categorical variables
-* Feature scaling
-* Data transformation
-* Train-test splitting
+* Train-test split
+
+### 2. Exploratory Data Analysis (EDA)
+
+* Distribution analysis
+* Correlation exploration
+* Feature relationship visualization
+* Borrower segmentation
+
+### 3. Machine Learning Models
+
+#### Logistic Regression
+
+A baseline classification model used to estimate default probability and provide interpretable risk predictions.
+
+#### Random Forest Classifier
+
+An ensemble learning model used to capture nonlinear relationships and improve classification performance.
+
+### 4. Model Evaluation
+
+Performance was assessed using:
+
+* ROC Curves
+* Classification Metrics
+* Model Comparison Analysis
+* Predictive Accuracy Assessment
 
 ---
 
-## 4. Machine Learning Models
-
-### Logistic Regression
-
-A baseline classification model was developed to estimate default probabilities and establish benchmark performance.
-
-### Random Forest Classifier
-
-A Random Forest model was implemented to capture complex nonlinear relationships and improve predictive performance.
-
----
-
-# Model Evaluation
-
-Performance was evaluated using:
-
-* Accuracy
-* Precision
-* Recall
-* F1 Score
-* ROC-AUC
-
-ROC curve analysis was used to compare model effectiveness and classification capability.
-
----
-
-# Key Findings
-
-* Financial indicators strongly influence default risk.
-* Random Forest captured more complex patterns than Logistic Regression.
-* Certain borrower characteristics consistently increased default probability.
-* Machine learning can provide valuable decision support for lending institutions.
-
----
-
-# Visualizations
-
-### Feature Relationship Analysis
-
-**File:** `FeatureRelationshipsEDA.png`
-
-Explores relationships among key borrower features and default behavior.
-
-### Logistic Regression ROC Curve
-
-**File:** `LogisticRegressionROC.png`
-
-Evaluates classification performance of the Logistic Regression model.
-
-### Random Forest ROC Curve
-
-**File:** `DebtRiskIQ_RandomForestROC.png`
-
-Demonstrates predictive performance of the Random Forest classifier.
-
----
-
-# Technologies Used
+## Technologies Used
 
 * Python
 * Pandas
@@ -151,69 +95,180 @@ Demonstrates predictive performance of the Random Forest classifier.
 
 ---
 
-# Applications
+## Key Findings
 
-This project demonstrates practical applications in:
-
-* Credit Risk Modeling
-* Financial Analytics
-* Lending Intelligence
-* Banking Decision Support
-* Predictive Risk Assessment
-* Machine Learning Classification
+* Borrower characteristics exhibit measurable relationships with default behavior.
+* Feature interaction analysis reveals important indicators of credit risk.
+* Logistic Regression provides interpretable risk predictions.
+* Random Forest improves the ability to capture complex relationships between borrower attributes.
+* ROC analysis demonstrates the predictive effectiveness of both approaches.
 
 ---
 
-# Future Enhancements
+## Project Workflow
 
-Potential improvements include:
+Data Collection
+↓
+Data Cleaning & Preparation
+↓
+Exploratory Data Analysis
+↓
+Feature Engineering
+↓
+Logistic Regression Modeling
+↓
+Random Forest Modeling
+↓
+Performance Evaluation
+↓
+Credit Risk Insights & Recommendations
+
+---
+
+# Visualizations
+
+## Feature Relationship Analysis
+
+![Feature Relationships](visuals/FeatureRelationshipsEDA.png)
+
+This exploratory analysis visualizes relationships among borrower features and highlights patterns associated with loan repayment behavior and default risk.
+
+---
+
+## Logistic Regression ROC Curve
+
+![Logistic Regression ROC](visuals/LogisticRegressionROC.png)
+
+The ROC curve evaluates the performance of the Logistic Regression model in distinguishing between default and non-default loan outcomes.
+
+---
+
+## Random Forest ROC Curve
+
+![Random Forest ROC](visuals/DebtRiskIQ_RandomForestROC.png)
+
+The Random Forest classifier demonstrates predictive capability through ROC analysis and provides performance comparisons against Logistic Regression.
+
+---
+
+## Project Branding
+
+![Debt Risk IQ](visuals/loan_logo.png)
+
+DebtRiskIQ project branding and repository identity.
+
+---
+
+## Results & Impact
+
+This project demonstrates how machine learning can support financial institutions by:
+
+* Improving loan approval decisions.
+* Identifying high-risk borrowers.
+* Reducing potential default losses.
+* Enhancing portfolio risk management.
+* Supporting data-driven lending strategies.
+
+The framework can be expanded into production-grade credit scoring systems and integrated into financial decision support platforms.
+
+---
+
+## Future Improvements
+
+Potential enhancements include:
 
 * XGBoost implementation
-* Explainable AI (SHAP)
+* LightGBM implementation
 * Hyperparameter optimization
-* Real-time risk scoring dashboard
+* Explainable AI (SHAP)
+* Real-time risk scoring
 * Streamlit deployment
-* Automated model retraining
+* Automated reporting dashboards
 
 ---
 
-# Repository Structure
+## Repository Structure
 
+```text
 DebtRiskIQ/
-
+│
 ├── notebook/
-
+│   └── DebtRiskIQ.ipynb
+│
 ├── visuals/
-
+│   ├── FeatureRelationshipsEDA.png
+│   ├── LogisticRegressionROC.png
+│   ├── DebtRiskIQ_RandomForestROC.png
+│   └── loan_logo.png
+│
 ├── data/
-
+│
 ├── README.md
-
 ├── requirements.txt
+└── .gitignore
+```
 
-└── docs/
+## Installation
+
+```bash
+git clone https://github.com/Dare215/DebtRiskIQ.git
+cd DebtRiskIQ
+pip install -r requirements.txt
+```
+
+## Usage
+
+Launch Jupyter Notebook:
+
+```bash
+jupyter notebook
+```
+
+Open:
+
+```text
+notebook/DebtRiskIQ.ipynb
+```
+
+Run all cells to reproduce:
+
+* Data preprocessing
+* Exploratory analysis
+* Logistic Regression model
+* Random Forest model
+* ROC performance evaluation
 
 ---
 
 # Author
 
 **Darious Brown**
-
-Artificial Intelligence & Machine Learning Engineer with expertise in:
-
-* Machine Learning
-* Deep Learning
-* Natural Language Processing
-* Generative AI
-* Predictive Analytics
-* Financial Intelligence Systems
-* Healthcare Analytics
+PhD Candidate – Artificial Intelligence & Machine Learning Specialization
+Walsh College
 
 GitHub: https://github.com/Dare215
 
-Portfolio: https://dare215.github.io/DariousBrown-Portfolio/
-
 LinkedIn: https://www.linkedin.com/in/dariousbrown
 
+Portfolio: https://dare215.github.io/DariousBrown-Portfolio/
+
 Email: [dariousbrown3@icloud.com](mailto:dariousbrown3@icloud.com)
-nse — Free to use with attribution.
+
+---
+
+## Research Interests
+
+* Artificial Intelligence
+* Machine Learning
+* Deep Learning
+* Predictive Analytics
+* Financial Risk Modeling
+* Generative AI
+* Pharmaceutical Manufacturing Analytics
+* Process Optimization
+
+---
+
+## About This Portfolio
+
+This repository is part of a larger Artificial Intelligence and Data Science portfolio showcasing machine learning, deep learning, predictive analytics, natural language processing, generative AI, computer vision, forecasting, and business intelligence projects developed throughout graduate and doctoral studies.
