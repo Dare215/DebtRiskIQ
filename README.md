@@ -1,79 +1,219 @@
-# DebtRiskIQ: Loan Default Prediction
+# DebtRiskIQ: Loan Default Prediction & Financial Risk Intelligence
 
-**Author:** Darious Brown  
-**GitHub:** [Dare215](https://github.com/Dare215)  
-**Email:** dariousbrown3@icloud.com  
+**Author:** Darious Brown
+**GitHub:** https://github.com/Dare215
+**Portfolio:** https://dare215.github.io/DariousBrown-Portfolio/
+**LinkedIn:** https://www.linkedin.com/in/dariousbrown
 
-## 1) Project Overview
-DebtRiskIQ is a machine learning-powered loan default prediction system that analyzes borrower profiles to assess the probability of default.  
-The project applies **exploratory data analysis (EDA)**, **feature engineering**, and **predictive modeling** (Logistic Regression & Random Forest) to identify risk factors and classify applicants.
+---
 
-## 2) Dataset
-- **Source:** Kaggle Loan Default Dataset  
-- **File:** `Loan_default.csv`  
-- **Size:** 2,532 rows × 13 columns  
-- **Key Variables:** `loan_amount`, `term`, `employment_type`, `annual_income`, `education`, `credit_score`, `age`, `loan_purpose`, `default_status` (target)  
+# Project Overview
 
-## 3) Key Features
-- **EDA:** Histograms, heatmaps, pie charts, scatter plots for distribution & correlation insights.
-- **Modeling:** Logistic Regression baseline & Random Forest Classifier for nonlinear relationships.
-- **Metrics:** Accuracy, Precision, Recall, F1-score, ROC-AUC.
-- **Interpretability:** SHAP values for feature importance at global & individual levels.
-- **Deployment:** Streamlit-based app for manual and batch predictions.
+DebtRiskIQ is a machine learning project designed to predict the likelihood of loan default using borrower financial characteristics and historical lending data.
 
-## 4) Project Structure
-```
+The project applies supervised machine learning techniques to identify risk patterns, evaluate borrower profiles, and support data-driven lending decisions. By comparing multiple classification algorithms, the system provides insights into factors that contribute to default risk and demonstrates how predictive analytics can improve financial risk management.
+
+---
+
+# Business Problem
+
+Financial institutions face significant challenges when assessing borrower risk. Traditional evaluation methods can overlook complex relationships between financial variables, resulting in increased default rates and financial losses.
+
+This project aims to:
+
+* Predict potential loan defaults
+* Identify influential borrower characteristics
+* Compare model performance
+* Improve lending decision support
+* Reduce financial risk exposure
+
+---
+
+# Dataset
+
+The dataset contains historical loan application information including borrower demographics, financial attributes, and repayment outcomes.
+
+Key variables include:
+
+* Income
+* Debt-to-Income Ratio
+* Credit History
+* Loan Amount
+* Employment Information
+* Borrower Characteristics
+* Default Status
+
+---
+
+# Project Workflow
+
+## 1. Data Cleaning
+
+The dataset was inspected for:
+
+* Missing values
+* Duplicate records
+* Invalid entries
+* Data consistency issues
+
+---
+
+## 2. Exploratory Data Analysis (EDA)
+
+Exploratory analysis was performed to uncover relationships between borrower attributes and default outcomes.
+
+Analysis included:
+
+* Feature distributions
+* Correlation analysis
+* Borrower risk patterns
+* Variable relationship exploration
+
+---
+
+## 3. Feature Engineering
+
+Relevant variables were prepared for machine learning through:
+
+* Encoding categorical variables
+* Feature scaling
+* Data transformation
+* Train-test splitting
+
+---
+
+## 4. Machine Learning Models
+
+### Logistic Regression
+
+A baseline classification model was developed to estimate default probabilities and establish benchmark performance.
+
+### Random Forest Classifier
+
+A Random Forest model was implemented to capture complex nonlinear relationships and improve predictive performance.
+
+---
+
+# Model Evaluation
+
+Performance was evaluated using:
+
+* Accuracy
+* Precision
+* Recall
+* F1 Score
+* ROC-AUC
+
+ROC curve analysis was used to compare model effectiveness and classification capability.
+
+---
+
+# Key Findings
+
+* Financial indicators strongly influence default risk.
+* Random Forest captured more complex patterns than Logistic Regression.
+* Certain borrower characteristics consistently increased default probability.
+* Machine learning can provide valuable decision support for lending institutions.
+
+---
+
+# Visualizations
+
+### Feature Relationship Analysis
+
+**File:** `FeatureRelationshipsEDA.png`
+
+Explores relationships among key borrower features and default behavior.
+
+### Logistic Regression ROC Curve
+
+**File:** `LogisticRegressionROC.png`
+
+Evaluates classification performance of the Logistic Regression model.
+
+### Random Forest ROC Curve
+
+**File:** `DebtRiskIQ_RandomForestROC.png`
+
+Demonstrates predictive performance of the Random Forest classifier.
+
+---
+
+# Technologies Used
+
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* Scikit-Learn
+* Jupyter Notebook
+
+---
+
+# Applications
+
+This project demonstrates practical applications in:
+
+* Credit Risk Modeling
+* Financial Analytics
+* Lending Intelligence
+* Banking Decision Support
+* Predictive Risk Assessment
+* Machine Learning Classification
+
+---
+
+# Future Enhancements
+
+Potential improvements include:
+
+* XGBoost implementation
+* Explainable AI (SHAP)
+* Hyperparameter optimization
+* Real-time risk scoring dashboard
+* Streamlit deployment
+* Automated model retraining
+
+---
+
+# Repository Structure
+
 DebtRiskIQ/
-│── LoanFraudPredictiorEngine-2.ipynb   # Jupyter notebook with EDA, modeling, and SHAP
-│── loan_predictor_app.py               # Streamlit app
-│── main.py                             # Model serving entry point
-│── Loan_default.csv                    # Dataset
-│── loan_default_model.pkl              # Trained Random Forest model
-│── requirements.txt                    # Python dependencies
-│── README.md                           # Project documentation
-```
 
-## 5) How to Run
+├── notebook/
 
-### Option A — Python / Terminal
-```bash
-# Create and activate a virtual environment
-python -m venv .venv
-source .venv/bin/activate   # Mac/Linux
-.venv\Scripts\activate      # Windows
+├── visuals/
 
-# Install dependencies
-pip install -r requirements.txt
+├── data/
 
-# Run the app
-streamlit run loan_predictor_app.py
-```
+├── README.md
 
-### Option B — PyCharm
-1. Open the folder in PyCharm  
-2. Configure a Python interpreter (point to `.venv`)  
-3. Install requirements from `requirements.txt`  
-4. Run either the notebook or the Streamlit app
+├── requirements.txt
 
-### Option C — GitHub Desktop
-1. Add the local repository to GitHub Desktop  
-2. Commit all files (including `README.md` and `requirements.txt`)  
-3. Push to a public GitHub repository  
+└── docs/
 
-## 6) Results Summary
-- **Random Forest ROC-AUC:** ~0.85  
-- **Top Predictors:** Credit Score, Annual Income, Loan Amount, Employment Type  
-- **Key Insight:** Credit score has a strong inverse correlation with default probability.
+---
 
-## 7) Ethical Considerations
-- Ensure fairness by monitoring disparate impact across income, education, and job type.
-- Avoid using sensitive features as proxies for discriminatory attributes.
-- Provide clear explanations for model predictions to build stakeholder trust.
+# Author
 
-## 8) Future Enhancements
-- Integrate **Fairness AI metrics** to monitor bias.
-- Add **LIME** alongside SHAP for interpretability comparisons.
-- Expand dataset for improved generalization.
+**Darious Brown**
 
-## 9) License
-MIT License — Free to use with attribution.
+Artificial Intelligence & Machine Learning Engineer with expertise in:
+
+* Machine Learning
+* Deep Learning
+* Natural Language Processing
+* Generative AI
+* Predictive Analytics
+* Financial Intelligence Systems
+* Healthcare Analytics
+
+GitHub: https://github.com/Dare215
+
+Portfolio: https://dare215.github.io/DariousBrown-Portfolio/
+
+LinkedIn: https://www.linkedin.com/in/dariousbrown
+
+Email: [dariousbrown3@icloud.com](mailto:dariousbrown3@icloud.com)
+nse — Free to use with attribution.
